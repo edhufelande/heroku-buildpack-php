@@ -15,7 +15,7 @@ heroku_rev='-2'
 MCRYPT_VERSION="2.5.8"
 APACHE_VERSION="2.2.27"
 APACHE_PATH="apache"
-PHP_VERSION="5.3.29"
+PHP_VERSION="7.2.31"
 PHP_PATH="php"
 
 BIN_DIR=$(dirname $0)
@@ -55,7 +55,7 @@ echo "-----> Bundling libJPEG version 8-d"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/jpeg-8d.tar.bz2" | tar xj
 
 echo "-----> Bundling PHP version $PHP_VERSION with apc.so mongo.so, redis.so and pdo_dblib built-in support"
-curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-""$PHP_VERSION"".tar.bz2" | tar xj
+curl --silent --max-time 60 --location "https://www.php.net/distributions/php-""$PHP_VERSION"".tar.bz2" | tar xj
 
 # update config files
 mkdir -p /app/apache/conf
